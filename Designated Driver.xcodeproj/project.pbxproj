@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50AB10D220597DAF00E43C5E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AB10D120597DAF00E43C5E /* Model.swift */; };
+		50AB10D5205987EC00E43C5E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AB10D4205987EC00E43C5E /* MapKit.framework */; };
 		7C408E472053124E0015CA0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C408E462053124E0015CA0B /* AppDelegate.swift */; };
 		7C408E492053124E0015CA0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C408E482053124E0015CA0B /* ViewController.swift */; };
 		7C408E4C2053124E0015CA0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C408E4A2053124E0015CA0B /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		50AB10D120597DAF00E43C5E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		50AB10D4205987EC00E43C5E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7C408E432053124E0015CA0B /* Designated Driver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Designated Driver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C408E462053124E0015CA0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C408E482053124E0015CA0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50AB10D5205987EC00E43C5E /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50AB10D3205987EC00E43C5E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50AB10D4205987EC00E43C5E /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7C408E3A2053124E0015CA0B = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +94,7 @@
 				7C408E5A2053124F0015CA0B /* Designated DriverTests */,
 				7C408E652053124F0015CA0B /* Designated DriverUITests */,
 				7C408E442053124E0015CA0B /* Products */,
+				50AB10D3205987EC00E43C5E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +111,7 @@
 		7C408E452053124E0015CA0B /* Designated Driver */ = {
 			isa = PBXGroup;
 			children = (
+				50AB10D120597DAF00E43C5E /* Model.swift */,
 				7C408E462053124E0015CA0B /* AppDelegate.swift */,
 				7C408E482053124E0015CA0B /* ViewController.swift */,
 				7C408E4A2053124E0015CA0B /* Main.storyboard */,
@@ -194,6 +209,11 @@
 					7C408E422053124E0015CA0B = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					7C408E562053124F0015CA0B = {
 						CreatedOnToolsVersion = 9.2;
@@ -259,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50AB10D220597DAF00E43C5E /* Model.swift in Sources */,
 				7C408E492053124E0015CA0B /* ViewController.swift in Sources */,
 				7C408E472053124E0015CA0B /* AppDelegate.swift in Sources */,
 			);
