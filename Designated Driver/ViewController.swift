@@ -47,7 +47,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         let currentLocation = locationManager.location
         textView.text = locationToString(currentLocation!)
-
+        UserModel.instance.setUserLocation(currentLocation!)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

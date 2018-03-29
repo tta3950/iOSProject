@@ -15,10 +15,13 @@ import CoreLocation
  */
 class UserModel {
     static let instance = UserModel()
-    //private var user:User
-    
+    private var _userLocation = CLLocation()
+    public var userLocation:CLLocation {get{return _userLocation}}
     private init() {}
     
+    public func setUserLocation(_ location:CLLocation){
+        _userLocation = location
+    }
     
 }
 

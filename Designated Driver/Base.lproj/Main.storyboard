@@ -26,6 +26,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQA-h4-GOb">
+                                <rect key="frame" x="143" y="592" width="89" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Show Map"/>
+                                <connections>
+                                    <segue destination="g75-qt-c7u" kind="show" id="kvb-cb-4kw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -36,6 +44,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="82.3088455772114"/>
+        </scene>
+        <!--Map View-->
+        <scene sceneID="c5N-lg-Ot6">
+            <objects>
+                <viewController id="g75-qt-c7u" customClass="MapView" customModule="Designated_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dEa-uG-W0d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Tgz-ES-HQh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Tgz-ES-HQh" firstAttribute="top" secondItem="dEa-uG-W0d" secondAttribute="top" id="8ba-4N-Im1"/>
+                            <constraint firstItem="Tgz-ES-HQh" firstAttribute="leading" secondItem="cQT-NG-108" secondAttribute="leading" id="D0C-Pc-Jfs"/>
+                            <constraint firstItem="Tgz-ES-HQh" firstAttribute="bottom" secondItem="cQT-NG-108" secondAttribute="bottom" id="EwJ-VA-iLx"/>
+                            <constraint firstItem="Tgz-ES-HQh" firstAttribute="trailing" secondItem="cQT-NG-108" secondAttribute="trailing" id="zv3-p3-8Yv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cQT-NG-108"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="Tgz-ES-HQh" id="a4E-E7-gHp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ej6-LB-7Yh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="821.60000000000002" y="81.409295352323838"/>
         </scene>
     </scenes>
 </document>
