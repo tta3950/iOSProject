@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5043F1AE207FA9C40002EC1B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5043F1AD207FA9C40002EC1B /* SignupViewController.swift */; };
 		50A8A57C206D654B006A281D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A8A57B206D654B006A281D /* MapView.swift */; };
 		50AB10D220597DAF00E43C5E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AB10D120597DAF00E43C5E /* Model.swift */; };
 		50AB10D5205987EC00E43C5E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AB10D4205987EC00E43C5E /* MapKit.framework */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5043F1AD207FA9C40002EC1B /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		50A8A57B206D654B006A281D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		50AB10D120597DAF00E43C5E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		50AB10D4205987EC00E43C5E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -121,6 +123,7 @@
 				7C408E4F2053124E0015CA0B /* LaunchScreen.storyboard */,
 				7C408E522053124E0015CA0B /* Info.plist */,
 				50A8A57B206D654B006A281D /* MapView.swift */,
+				5043F1AD207FA9C40002EC1B /* SignupViewController.swift */,
 			);
 			path = "Designated Driver";
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			files = (
 				50AB10D220597DAF00E43C5E /* Model.swift in Sources */,
 				50A8A57C206D654B006A281D /* MapView.swift in Sources */,
+				5043F1AE207FA9C40002EC1B /* SignupViewController.swift in Sources */,
 				7C408E492053124E0015CA0B /* ViewController.swift in Sources */,
 				7C408E472053124E0015CA0B /* AppDelegate.swift in Sources */,
 			);
