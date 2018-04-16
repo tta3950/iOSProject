@@ -1,0 +1,6 @@
+framework module Pods_Designated_DriverTests {
+  umbrella header "Pods-Designated DriverTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
