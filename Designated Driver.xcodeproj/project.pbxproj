@@ -20,6 +20,7 @@
 		7C408E672053124F0015CA0B /* Designated_DriverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C408E662053124F0015CA0B /* Designated_DriverUITests.swift */; };
 		7C93D02C20866478001A953C /* userTypeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C93D02B20866478001A953C /* userTypeSelectionViewController.swift */; };
 		84C27F9F38C54982F2B2096D /* Pods_Designated_Driver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861792F7E80DC08C280676A4 /* Pods_Designated_Driver.framework */; };
+		8893EB5620864603003B3E03 /* b52b0431-1daa-4119-84e1-a1905c8c49dc.png in Resources */ = {isa = PBXBuildFile; fileRef = 8893EB5520864603003B3E03 /* b52b0431-1daa-4119-84e1-a1905c8c49dc.png */; };
 		AFF5162B8803ABA7644E3766 /* Pods_Designated_DriverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47C5697A38F4F14604827073 /* Pods_Designated_DriverTests.framework */; };
 		D2F0ACF72674496C482B7E59 /* Pods_Designated_DriverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96534360531510BB24D24CBC /* Pods_Designated_DriverUITests.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,7 @@
 		7C408E682053124F0015CA0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C93D02B20866478001A953C /* userTypeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userTypeSelectionViewController.swift; sourceTree = "<group>"; };
 		861792F7E80DC08C280676A4 /* Pods_Designated_Driver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Designated_Driver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8893EB5520864603003B3E03 /* b52b0431-1daa-4119-84e1-a1905c8c49dc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "b52b0431-1daa-4119-84e1-a1905c8c49dc.png"; path = "../../b52b0431-1daa-4119-84e1-a1905c8c49dc.png"; sourceTree = "<group>"; };
 		93CA991D975A4630BA10CC86 /* Pods-Designated Driver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Designated Driver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Designated Driver/Pods-Designated Driver.debug.xcconfig"; sourceTree = "<group>"; };
 		96534360531510BB24D24CBC /* Pods_Designated_DriverUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Designated_DriverUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB81573DA8BEAAB771E8A18F /* Pods-Designated DriverUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Designated DriverUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Designated DriverUITests/Pods-Designated DriverUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			children = (
 				50AB10D120597DAF00E43C5E /* Model.swift */,
 				7C408E4A2053124E0015CA0B /* Main.storyboard */,
+				8893EB5520864603003B3E03 /* b52b0431-1daa-4119-84e1-a1905c8c49dc.png */,
 				7C408E462053124E0015CA0B /* AppDelegate.swift */,
 				7C408E482053124E0015CA0B /* ViewController.swift */,
 				7C93D02B20866478001A953C /* userTypeSelectionViewController.swift */,
@@ -299,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8893EB5620864603003B3E03 /* b52b0431-1daa-4119-84e1-a1905c8c49dc.png in Resources */,
 				7C408E512053124E0015CA0B /* LaunchScreen.storyboard in Resources */,
 				7C408E4E2053124E0015CA0B /* Assets.xcassets in Resources */,
 				7C408E4C2053124E0015CA0B /* Main.storyboard in Resources */,
