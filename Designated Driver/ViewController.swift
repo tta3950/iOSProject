@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreLocation
+import Parse
+
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
@@ -87,6 +89,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             temp+="*"
         }
         return temp
+    }
+    @IBAction func loginAction(_ sender: Any) {
+        PFUser.logInWithUsername(inBackground: usernameText.text!, password: passwordText.text!)
     }
     
 }

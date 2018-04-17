@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class SignupViewController: UIViewController {
     var segue:UIStoryboardSegue?
@@ -15,13 +16,7 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var emailAddress: UITextField!
     @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var isDriver: UISwitch!
-    @IBOutlet weak var carMake: UITextField!
-    @IBOutlet weak var carModel: UITextField!
-    @IBOutlet weak var phoneNumber: UITextField!
-    @IBOutlet weak var optBut1: UIButton!
-    @IBOutlet weak var optBut2: UIButton!
-    @IBOutlet weak var optBut3: UIButton!
+
     var tempPasswordStr = ""
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,19 +51,23 @@ class SignupViewController: UIViewController {
         }
         return temp
     }
-    @IBAction func onSliderChanged(_ sender: Any) {
-        if  (isDriver.isOn){
-            optBut1.isHidden = false
-            optBut2.isHidden = false
-            optBut3.isHidden = false
-        }else {
-            optBut1.isHidden = true
-            optBut2.isHidden = true
-            optBut3.isHidden = true
+    
+    
+    @IBAction func singUpButton(_ sender: Any) {
+        let user = PFUser()
+        user.username = emailAddress.text
+        user.password = password.text
+        user.email = emailAddress.text
+        
+        user.signUpInBackground {
+            (success, error) -> Void in
+            if let error = error as NSError? {
+                let errorString = error.userInfo["error"] as? NSString
+                //in case something went wrong, as errstring to get the error
+            } else {
+                // everthing went okay
+            }
         }
     }
-    @IBAction func phoneNumberFormatter(_ sender: Any) {
-        
-    }
-    
 }
+
