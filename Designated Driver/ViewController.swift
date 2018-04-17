@@ -49,8 +49,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.distanceFilter = 100.0
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
-        let currentLocation = locationManager.location
-        UserModel.instance.setUserLocation(currentLocation!)
+        let currentLocation = CLLocation(latitude: 40.3480545, longitude: -94.8726300)
+        UserModel.instance.setUserLocation(currentLocation)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -63,12 +63,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         print("There was an error. \(error)")
     }
     
-    func locationToString(_ loc:CLLocation)->String{
-        var str = ""
-        let coord = loc.coordinate
-        str += "Latitude: \(coord.latitude) Longitude: \(coord.longitude)"
-        return str
-    }
+//    func locationToString(_ loc:CLLocation)->String{
+//        var str = ""
+//        let coord = loc.coordinate
+//        str += "Latitude: \(coord.latitude) Longitude: \(coord.longitude)"
+//        return str
+//    }
     
     @IBAction func showPassword(_ sender: Any) {
         passwordText.text=tempPasswordString
