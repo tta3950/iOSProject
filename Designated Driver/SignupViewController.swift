@@ -40,9 +40,28 @@ class SignupViewController: UIViewController {
     }
     @IBAction func inputChanged(_ sender: Any) {
         let text = password.text!
-        let temp:String = String(text[text.index(before: text.endIndex)])
-        password.text = replaceWithStars(text)
-        tempPasswordStr += temp
+        //check if text field is empty
+        if(text.count != 0){
+            //get the last key entered by user (* is == backspace)
+            let temp:String = String(text[text.index(before: text.endIndex)])
+            //obfuscate the current field
+            password.text = replaceWithStars(text)
+            if(temp != "*"){
+                //add the corresponding character to password string and continue
+                tempPasswordStr += temp
+            }else{
+                //remove last character from password
+                if(tempPasswordStr.count != 0 && tempPasswordStr.count > 1){
+                    tempPasswordStr.removeLast()
+                }else{
+                    tempPasswordStr.removeAll()
+                }
+            }
+        }else{
+            //the user hit backspace at passwordField.text.count = 0 or 1, don't add anything and remove last character
+            //if applicable
+            tempPasswordStr.removeAll()
+        }
     }
     func replaceWithStars(_ str:String) -> String{
         var temp:String = ""

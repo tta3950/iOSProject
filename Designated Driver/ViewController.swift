@@ -77,11 +77,31 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func unShowPassword(_ sender: Any) {
         passwordText.text = replaceWithStars(passwordText.text!)
     }
+    //called when password field is changed
     @IBAction func inputChanged(_ sender: Any) {
         let text = passwordText.text!
-        let temp:String = String(text[text.index(before: text.endIndex)])
-        passwordText.text = replaceWithStars(text)
-        tempPasswordString += temp
+        //check if text field is empty
+        if(text.count != 0){
+            //get the last key entered by user (* is == backspace)
+            let temp:String = String(text[text.index(before: text.endIndex)])
+            //obfuscate the current field
+            passwordText.text = replaceWithStars(text)
+            if(temp != "*"){
+                //add the corresponding character to password string and continue
+                tempPasswordString += temp
+            }else{
+                //remove last character from password
+                if(tempPasswordString.count != 0 && tempPasswordString.count > 1){
+                    tempPasswordString.removeLast()
+                }else{
+                    tempPasswordString.removeAll()
+                }
+            }
+        }else{
+            //the user hit backspace at passwordField.text.count = 0 or 1, don't add anything and remove last character
+            //if applicable
+            tempPasswordString.removeAll()
+        }
     }
     func replaceWithStars(_ str:String) -> String{
         var temp:String = ""
