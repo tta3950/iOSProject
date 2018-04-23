@@ -72,21 +72,44 @@ class SignupViewController: UIViewController {
     }
     
     
-    @IBAction func singUpButton(_ sender: Any) {
-        let user = PFUser()
-        user.username = emailAddress.text
-        user.password = password.text
-        user.email = emailAddress.text
-        
-        user.signUpInBackground {
-            (success, error) -> Void in
-            if let error = error as NSError? {
-                let errorString = error.userInfo["error"] as? NSString
-                //in case something went wrong, as errstring to get the error
-            } else {
-                // everthing went okay
+    @IBAction func signUpButton(_ sender: Any) {
+        if(validateInput()){
+            UserModel.instance.signUpAsUser(firstName.text!,lastName.text!,emailAddress.text!, password.text!)
+        }
+    }
+    func validateInput() -> Bool{
+        //here be arrow code
+        //try not to replicate code like this, it is bad looking and I feel bad for making it
+        if(firstName.text?.count == 0){
+            loginAlert(message: "First name field is blank" as String, title: "Incomplete field")
+            return false
+        }else{
+            if(lastName.text?.count == 0){
+                loginAlert(message: "Last name field is blank" as String, title: "Incomplete field")
+                return false
+            }else{
+                if(emailAddress.text?.count == 0){
+                    if(!(emailAddress.text?.contains("@"))!){
+                        loginAlert(message: "Email Address is not valid" as String, title: "Incomplete field")
+                        return false
+                    }else{
+                        if(password.text?.count == 0){
+                            loginAlert(message: "Password field is blank" as String, title: "Incomplete field")
+                            return false
+                        }
+                    }
+                    loginAlert(message: "Email address field is blank" as String, title: "Incomplete field")
+
+                    return false
+                }
             }
         }
+        return true
+    }
+    func loginAlert(message: String, title: NSString){
+        let alert = UIAlertController(title: title as String, message: message as String, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

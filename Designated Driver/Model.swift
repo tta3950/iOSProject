@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import Parse
 /**
  Current use of the UserModel Class should be for User Authentication,
  User Interactions with the app, and provide an interface for connecting
@@ -16,11 +17,34 @@ import CoreLocation
 class UserModel {
     static let instance = UserModel()
     private var _userLocation = CLLocation()
+    private var _user:User = User()
+    
     public var userLocation:CLLocation {get{return _userLocation}}
+    public var user:User{get{return _user}}
+
     private init() {}
     
     public func setUserLocation(_ location:CLLocation){
         _userLocation = location
+    }
+    
+    public func signUpAsUser(_ firstName:String, _ lastName:String, _ emailAddress:String, _ password:String){
+        let user = PFUser()
+        user.username = emailAddress
+        user.password = password
+        user.email = emailAddress
+        user.setObject("\(firstName) \(lastName)", forKey: "Name")
+        user.signUpInBackground {
+            (success, error) -> Void in
+            if let error = error as NSError? {
+                let errorString = error.userInfo["error"] as? NSString
+                
+                //in case something went wrong, as errstring to get the error
+            } else {
+                // everthing went okay
+                self._user = User(firstName,lastName,emailAddress,password)
+            }
+        }
     }
 }
 
@@ -38,8 +62,13 @@ class User {
     public var lastName:String { get { return _lastName}}
     public var emailAddress:String {get {return _emailAddress}}
     public var password:String{get{return _password}}
-    
-    init(_  first:String, last:String, emailAdress:String, password:String){
+    init(){
+        _firstName = ""
+        _lastName = ""
+        _emailAddress = ""
+        _password = ""
+    }
+    init(_  first:String, _ last:String, _ emailAdress:String, _ password:String){
         _firstName = first
         _lastName = last
         _emailAddress = emailAdress
