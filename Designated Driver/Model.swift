@@ -20,7 +20,7 @@ class UserModel {
     private var _user:User = User()
     
     public var userLocation:CLLocation {get{return _userLocation}}
-    public var user:User{get{return _user}}
+    public var userAccount:User{get{return _user}}
 
     private init() {}
     
@@ -45,6 +45,11 @@ class UserModel {
                 self._user = User(firstName,lastName,emailAddress,password)
             }
         }
+    }
+    public func signInAsUser(_ emailAddress:String, _ password:String){
+        let user = PFUser()
+        user.username = emailAddress
+        user.password = password
     }
 }
 
