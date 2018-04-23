@@ -94,7 +94,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func loginAction(_ sender: Any) {
         PFUser.logInWithUsername(inBackground: usernameText.text!, password: passwordText.text!, block: {(user, error) -> Void in
-            if let error = error! as NSError?{
+            if let error = error as NSError?{
                 let errorString = error.userInfo["error"] as? NSString
                 // in case something went wrong...
                 self.loginAlert(message: errorString! as String, title: "Error")
