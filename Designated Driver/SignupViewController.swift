@@ -75,6 +75,7 @@ class SignupViewController: UIViewController {
     @IBAction func signUpButton(_ sender: Any) {
         if(validateInput()){
             UserModel.instance.signUpAsUser(firstName.text!,lastName.text!,emailAddress.text!, password.text!)
+            self.performSegue(withIdentifier: "loginSegue", sender: nil)
         }
     }
     func validateInput() -> Bool{
