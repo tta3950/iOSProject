@@ -22,7 +22,6 @@ class UserModel {
     public func setUserLocation(_ location:CLLocation){
         _userLocation = location
     }
-    
 }
 
 /**
@@ -32,34 +31,21 @@ class UserModel {
 class User {
     private var _firstName:String
     private var _lastName:String
-    private var _dateJoined:String
-    private var _timeZone:TimeZone
+    private var _emailAddress:String
+    private var _password:String
     
     public var firstName:String { get { return _firstName}}
     public var lastName:String { get { return _lastName}}
-    public var dateJoined:String { get { return _dateJoined}}
-    public var timeZone:TimeZone { get { return _timeZone}}
+    public var emailAddress:String {get {return _emailAddress}}
+    public var password:String{get{return _password}}
     
-    init(){
-        _firstName = ""
-        _lastName = ""
-        _dateJoined = ""
-        _timeZone = TimeZone.current
-    }
-    init(firstName first:String, lastName last:String){
+    init(_  first:String, last:String, emailAdress:String, password:String){
         _firstName = first
         _lastName = last
-        let dateFormatter = DateFormatter()
-        _dateJoined = dateFormatter.string(from:Date())
-        _timeZone = TimeZone.current
+        _emailAddress = emailAdress
+        _password = password
     }
     
-    init(firstName first:String, lastName last:String, dateJoined date:String) {
-        _firstName = first
-        _lastName = last
-        _dateJoined = date
-        _timeZone = TimeZone.current
-    }
 }
 
 //may merge this with just user
