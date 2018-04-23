@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class userTypeSelectionViewController: UIViewController {
 
@@ -28,14 +29,18 @@ class userTypeSelectionViewController: UIViewController {
     @IBAction func riderButton(_ sender: UIButton) {
         
     }
-    /*
+    @IBAction func logoutButton(_ sender: Any) {
+        PFUser.logOutInBackground()
+        self.performSegue(withIdentifier: "logoutSegue", sender: nil)
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }
-    */
+    //}
+    
 
 }

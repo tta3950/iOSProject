@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class RiderViewController: UIViewController {
 
@@ -21,7 +22,21 @@ class RiderViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBOutlet weak var locationTF: UITextField!
+    
+    @IBOutlet weak var destinationTF: UITextField!
+    
+    @IBAction func logoutButton(_ sender: Any) {
+        PFUser.logOutInBackground()
+        self.performSegue(withIdentifier: "logoutSegue", sender: nil)
+    }
+    
+    @IBAction func enterInfo(_ sender: Any) {
+    }
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class DriverSeatsViewController: UIViewController {
 
@@ -21,6 +22,12 @@ class DriverSeatsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBOutlet weak var seatsTF: UITextField!
+    
+    @IBAction func logoutButton(_ sender: Any) {
+        PFUser.logOutInBackground()
+        self.performSegue(withIdentifier: "logoutSegue", sender: nil)
+    }
 
     /*
     // MARK: - Navigation
