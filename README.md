@@ -27,7 +27,7 @@ How to use:
         Fill out all fields and tap the Sign Up! button.
         
         If you entered the sign up view erronously you can
-        tap the cancel button to go back to log in screen.
+        tap the arrow button to go back to log in screen.
         
         Proceed to existing users section.
         

@@ -21,13 +21,35 @@ class UserModel {
     
     public var userLocation:CLLocation {get{return _userLocation}}
     public var userAccount:User{get{return _user}}
+    public var riderArray:[Rider] = nil
 
     private init() {}
     
     public func setUserLocation(_ location:CLLocation){
         _userLocation = location
     }
-    
+    public func fetchRiders(){
+        let innerQuery = PFQuery(className: "Session")
+        innerQuery.whereKeyExists("user)")
+        let query = PFQuery(className: "User")
+        query.whereKey("objectId", matchesQuery: innerQuery)
+        query.whereKey("Rider", equalTo: "True")
+        query.findObjectsInBackground {
+            (objects: [PFObject]?, error: Error?) -> Void in
+            var riders:[Rider]
+            if error == nil {
+                for object in objects!{
+                    riders.append(Rider(name:object["Name"] as! String, location:object["Location"] as! String
+                        ,destination:object["Destination"] as! String))
+                }
+                UserModel.instance.riderArray = riders
+            } else {
+                //error has occured
+                                
+            }
+            
+        }
+    }
     public func signUpAsUser(_ firstName:String, _ lastName:String, _ emailAddress:String, _ password:String){
         let user = PFUser()
         user.username = emailAddress
@@ -51,8 +73,24 @@ class UserModel {
         user.username = emailAddress
         user.password = password
     }
+    
 }
 
+class Rider{
+    private var _name:String
+    private var _location:String
+    private var _destination:String
+    
+    public var name:String
+    public var location:String
+    public var destination:String
+    
+    init(name:String, location:String, destination:String){
+        _name = name
+        _location = location
+        _destination = destination
+    }
+}
 /**
  This class is the basic user class. It holds the generic info about a user.
  This includes their name, when they joined, and what timeZone they are in currently.
