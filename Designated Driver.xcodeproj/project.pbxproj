@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44181F26208D9DF9003B12E5 /* RiderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44181F25208D9DF9003B12E5 /* RiderViewController.swift */; };
 		5043F1AE207FA9C40002EC1B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5043F1AD207FA9C40002EC1B /* SignupViewController.swift */; };
 		5046DD5C208D89A8005B4D34 /* DriverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5046DD5B208D89A8005B4D34 /* DriverTableViewController.swift */; };
 		50A8A57C206D654B006A281D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A8A57B206D654B006A281D /* MapView.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		2F551388FD17093D5DF9132F /* Pods-Designated DriverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Designated DriverTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Designated DriverTests/Pods-Designated DriverTests.debug.xcconfig"; sourceTree = "<group>"; };
+		44181F25208D9DF9003B12E5 /* RiderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderViewController.swift; sourceTree = "<group>"; };
 		47C5697A38F4F14604827073 /* Pods_Designated_DriverTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Designated_DriverTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5043F1AD207FA9C40002EC1B /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		5046DD5B208D89A8005B4D34 /* DriverTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverTableViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				50AB10D120597DAF00E43C5E /* Model.swift */,
+				44181F25208D9DF9003B12E5 /* RiderViewController.swift */,
 				7C408E4A2053124E0015CA0B /* Main.storyboard */,
 				7C408E462053124E0015CA0B /* AppDelegate.swift */,
 				7C408E482053124E0015CA0B /* ViewController.swift */,
@@ -447,6 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C93D02C20866478001A953C /* userTypeSelectionViewController.swift in Sources */,
+				44181F26208D9DF9003B12E5 /* RiderViewController.swift in Sources */,
 				50AB10D220597DAF00E43C5E /* Model.swift in Sources */,
 				50A8A57C206D654B006A281D /* MapView.swift in Sources */,
 				5046DD5C208D89A8005B4D34 /* DriverTableViewController.swift in Sources */,
