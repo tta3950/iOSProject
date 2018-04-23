@@ -9,7 +9,7 @@
 import UIKit
 
 class DriverTableViewController: UITableViewController {
-    var riders:[Rider]
+    var riders:[Rider] = []
     override func viewDidLoad() {
         super.viewDidLoad()
 

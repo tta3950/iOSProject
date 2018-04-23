@@ -21,7 +21,7 @@ class UserModel {
     
     public var userLocation:CLLocation {get{return _userLocation}}
     public var userAccount:User{get{return _user}}
-    public var riderArray:[Rider] = nil
+    public var riderArray:[Rider] = []
 
     private init() {}
     
