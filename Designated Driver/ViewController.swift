@@ -117,19 +117,39 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             if let error = error as NSError?{
                 let errorString = error.userInfo["error"] as? NSString
                 // in case something went wrong...
-                self.loginAlert(message: errorString! as String, title: "Error")
+                self.loginFailAlert(message: errorString! as String, title: "Error")
             }
             else{
                 //everything went alright
-                self.loginAlert(message: "Welcome Back!", title: "Login")
+                self.loginSuccessAlert(message: "Welcome Back!", title: "Login")
             }
         })
     }
     
-    func loginAlert(message: String, title: NSString){
+    //alert for when login credentials are incorrect
+    func loginFailAlert(message: String, title: NSString){
         let alert = UIAlertController(title: title as String, message: message as String, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    //alert when login credentials are correct
+    func loginSuccessAlert(message: String, title: NSString){
+        let alert = UIAlertController(title: title as String, message: message as String, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Horray!", style: UIAlertActionStyle.default, handler: {action -> Void in
+            self.performSegue(withIdentifier: "userTypeSegue", sender: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+    //}
+    
     
 }
