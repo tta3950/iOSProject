@@ -8,7 +8,8 @@
 
 import UIKit
 
-class DriverTableViewController: UITableViewController {
+class DriverTableViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var uiTableView: UITableView!
     var riders:[Rider] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,11 @@ class DriverTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         riders = UserModel.instance.riderArray
+        let sectionInt = numberOfSections(in: uiTableView)
+        let numRows = tableView(uiTableView, numberOfRowsInSection: sectionInt)
+        uiTableView.beginUpdates()
+        uiTableView.insertRows(at:[IndexPath(row: numRows,section:sectionInt)], with: .automatic)
+        uiTableView.endUpdates()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,18 +34,18 @@ class DriverTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return riders.count
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Riders", for: indexPath)
         let rider = riders[indexPath.row]
         cell.textLabel!.text = "Name: \(rider.name) Location: \(rider.location) Destination: \(rider.destination)"
