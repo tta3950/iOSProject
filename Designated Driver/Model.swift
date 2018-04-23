@@ -36,8 +36,9 @@ class UserModel {
         query.whereKey("Rider", equalTo: "True")
         query.findObjectsInBackground {
             (objects: [PFObject]?, error: Error?) -> Void in
-            var riders:[Rider]
+            
             if error == nil {
+                var riders:[Rider] = []
                 for object in objects!{
                     riders.append(Rider(name:object["Name"] as! String, location:object["Location"] as! String
                         ,destination:object["Destination"] as! String))
@@ -81,9 +82,9 @@ class Rider{
     private var _location:String
     private var _destination:String
     
-    public var name:String
-    public var location:String
-    public var destination:String
+    public var name:String {get{return _name}}
+    public var location:String {get{return _location}}
+    public var destination:String {get{return _destination}}
     
     init(name:String, location:String, destination:String){
         _name = name
