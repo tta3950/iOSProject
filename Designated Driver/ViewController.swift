@@ -103,6 +103,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             tempPasswordString.removeAll()
         }
     }
+    
     func replaceWithStars(_ str:String) -> String{
         var temp:String = ""
         for _ in str {
@@ -110,8 +111,25 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         return temp
     }
+    
     @IBAction func loginAction(_ sender: Any) {
-        PFUser.logInWithUsername(inBackground: usernameText.text!, password: passwordText.text!)
+        PFUser.logInWithUsername(inBackground: usernameText.text!, password: passwordText.text!, block: {(user, error) -> Void in
+            if let error = error as NSError?{
+                let errorString = error.userInfo["error"] as? NSString
+                // in case something went wrong...
+                self.loginAlert(message: errorString! as String, title: "Error")
+            }
+            else{
+                //everything went alright
+                self.loginAlert(message: "Welcome Back!", title: "Login")
+            }
+        })
+    }
+    
+    func loginAlert(message: String, title: NSString){
+        let alert = UIAlertController(title: title as String, message: message as String, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
