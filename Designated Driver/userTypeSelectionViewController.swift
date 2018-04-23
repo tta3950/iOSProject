@@ -23,6 +23,8 @@ class userTypeSelectionViewController: UIViewController {
     }
     
     @IBAction func driverButton(_ sender: UIButton) {
+        UserModel.instance.fetchRiders()
+        self.performSegue(withIdentifier: "driverSegue", sender: nil)
         
     }
     
