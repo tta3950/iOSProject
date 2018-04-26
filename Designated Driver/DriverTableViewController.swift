@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import Parse
 
 class DriverTableViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var uiTableView: UITableView!
-    var riders:[Rider] = []
+    var riders:[PFObject] = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +20,7 @@ class DriverTableViewController: UIViewController,UITableViewDelegate, UITableVi
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        AppDelegate.myModel.fetchRiders()
         riders = AppDelegate.myModel.riderArray
         let sectionInt = numberOfSections(in: uiTableView)
         let numRows = tableView(uiTableView, numberOfRowsInSection: sectionInt)
@@ -48,7 +50,10 @@ class DriverTableViewController: UIViewController,UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Riders", for: indexPath)
         let rider = riders[indexPath.row]
-        cell.textLabel!.text = "Name: \(rider.name) Location: \(rider.location) Destination: \(rider.destination)"
+        let name = rider.object(forKey: "Name")
+        let location = rider.object(forKey: "Location")
+        let destination = rider.object(forKey: "Destination")
+        cell.textLabel!.text = "Name: \(String(describing: name)) Location: \(String(describing: location)) Destination: \(String(describing: destination))"
         return cell
     }
     

@@ -301,11 +301,6 @@
                                 <rect key="frame" x="83" y="174" width="270" height="141"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVj-UN-xJO">
-                                <rect key="frame" x="152" y="575" width="116" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Forgot Password"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4u-fz-Q4V">
                                 <rect key="frame" x="67" y="526" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -514,6 +509,7 @@
         <image name="steeringwheel" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="62e-2G-1WT"/>
         <segue reference="fw2-6A-WX9"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -21,7 +21,7 @@ class UserModel {
     
     public var userLocation:CLLocation {get{return _userLocation}}
     public var userAccount:User{get{return _user}}
-    public var riderArray:[Rider] = []
+    public var riderArray:[PFObject] = []
 
     init() {}
     
@@ -29,21 +29,19 @@ class UserModel {
         _userLocation = location
     }
     public func fetchRiders(){
-        let innerQuery = PFQuery(className: "Session")
-        innerQuery.whereKeyExists("user")
-        let query = PFQuery(className: "User")
-        query.whereKey("objectId", matchesQuery: innerQuery)
-        query.whereKey("Rider", equalTo: "True")
-        query.findObjectsInBackground {
+//        let innerQuery = PFQuery(className: "Session")
+//        innerQuery.whereKeyExists("user")
+        let query = PFUser.query()
+        query?.whereKey("Rider", equalTo: true)
+        query?.findObjectsInBackground {
             (objects: [PFObject]?, error: Error?) -> Void in
             
             if error == nil {
-                var riders:[Rider] = []
+                var riders:[PFObject] = []
                 for object in objects!{
-                    riders.append(Rider(name:object["Name"] as! String, location:object["Location"] as! String
-                        ,destination:object["Destination"] as! String))
+                    riders.append(object)
                 }
-                UserModel.instance.riderArray = riders
+                self.riderArray = riders
             } else {
                 //error has occured
                                 

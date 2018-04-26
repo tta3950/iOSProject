@@ -26,7 +26,6 @@ class userTypeSelectionViewController: UIViewController {
         user!["Rider"] = false
         user!["Driver"] = true
         user?.saveInBackground()
-        AppDelegate.myModel.fetchRiders()
         self.performSegue(withIdentifier: "driverSegue", sender: nil)
         
     }
