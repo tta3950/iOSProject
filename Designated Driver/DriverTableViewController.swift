@@ -19,7 +19,7 @@ class DriverTableViewController: UIViewController,UITableViewDelegate, UITableVi
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        riders = UserModel.instance.riderArray
+        riders = AppDelegate.myModel.riderArray
         let sectionInt = numberOfSections(in: uiTableView)
         let numRows = tableView(uiTableView, numberOfRowsInSection: sectionInt)
         uiTableView.beginUpdates()

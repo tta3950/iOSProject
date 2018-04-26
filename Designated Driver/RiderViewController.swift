@@ -11,15 +11,25 @@ import Parse
 
 class RiderViewController: UIViewController {
 
+    @IBOutlet weak var locationTF: UITextField!
+    @IBOutlet weak var destinationTF: UITextField!
+    static var user = PFUser.current()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func enterInfo(_ sender: Any) {
+        RiderViewController.user!["Location"] = locationTF.text
+        RiderViewController.user!["Destination"] = destinationTF.text
+        RiderViewController.user?.saveInBackground()
     }
     
     @IBAction func logoutButton(_ sender: Any) {

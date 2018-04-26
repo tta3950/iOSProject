@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 class userTypeSelectionViewController: UIViewController {
-
+    var user = PFUser.current()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,13 +23,18 @@ class userTypeSelectionViewController: UIViewController {
     }
     
     @IBAction func driverButton(_ sender: UIButton) {
-        UserModel.instance.fetchRiders()
+        user!["Rider"] = false
+        user!["Driver"] = true
+        user?.saveInBackground()
+        AppDelegate.myModel.fetchRiders()
         self.performSegue(withIdentifier: "driverSegue", sender: nil)
         
     }
     
     @IBAction func riderButton(_ sender: UIButton) {
-        
+        user!["Rider"] = true
+        user!["Driver"] = false
+        user?.saveInBackground()
     }
     @IBAction func logoutButton(_ sender: Any) {
         PFUser.logOutInBackground()

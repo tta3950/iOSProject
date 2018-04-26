@@ -73,10 +73,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func showPassword(_ sender: Any) {
         passwordText.text=tempPasswordString
     }
+    
     //touch up inside or outside may make this one work, but leaving both, shouldn't be a problem
     @IBAction func unShowPassword(_ sender: Any) {
         passwordText.text = replaceWithStars(passwordText.text!)
     }
+    
     //called when password field is changed
     @IBAction func inputChanged(_ sender: Any) {
         let text = passwordText.text!
@@ -104,6 +106,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    //replaces the text users type into the password text field with stars for security
     func replaceWithStars(_ str:String) -> String{
         var temp:String = ""
         for _ in str {
@@ -112,6 +115,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         return temp
     }
     
+    //logs the user in with the strings from the email and password text fields
     @IBAction func loginAction(_ sender: Any) {
         PFUser.logInWithUsername(inBackground: usernameText.text!, password: passwordText.text!, block: {(user, error) -> Void in
             if let error = error as NSError?{

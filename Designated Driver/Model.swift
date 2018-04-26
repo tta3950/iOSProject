@@ -23,14 +23,14 @@ class UserModel {
     public var userAccount:User{get{return _user}}
     public var riderArray:[Rider] = []
 
-    private init() {}
+    init() {}
     
     public func setUserLocation(_ location:CLLocation){
         _userLocation = location
     }
     public func fetchRiders(){
         let innerQuery = PFQuery(className: "Session")
-        innerQuery.whereKeyExists("user)")
+        innerQuery.whereKeyExists("user")
         let query = PFQuery(className: "User")
         query.whereKey("objectId", matchesQuery: innerQuery)
         query.whereKey("Rider", equalTo: "True")
